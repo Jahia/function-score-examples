@@ -1,0 +1,89 @@
+{
+  "contentTypeBoost": {
+    "boost": "1",
+    "functions": [
+      {
+        "filter": {
+          "match": {
+            "jgql:nodeType": "jnt:file"
+          }
+        },
+        "weight": 10
+      },
+      {
+        "filter": {
+          "match": {
+            "jgql:nodeType": "jnt:news"
+          }
+        },
+        "weight": 5
+      }
+    ],
+    "score_mode": "first",
+    "boost_mode": "multiply",
+    "min_score": 1
+  },
+  "contentBoost": {
+    "boost": "1",
+    "functions": [
+      {
+        "filter": {
+          "match": {
+            "jgql:nodeType": "jmix:boostContentInSearch"
+          }
+        },
+        "field_value_factor": {
+          "field": "boost",
+          "missing": 1
+        }
+      }
+    ],
+    "score_mode": "max",
+    "boost_mode": "multiply",
+    "min_score": 1
+  },
+  "lastPublication": {
+    "functions": [
+      {
+        "linear": {
+          "jgql:lastPublished": {
+            "origin": "now",
+            "scale": "3650d",
+            "decay": 0.4
+          }
+        }
+      }
+    ],
+    "score_mode": "max",
+    "boost_mode": "multiply",
+    "min_score": 1
+  },
+  "sectionBoost": {
+    "boost": "1",
+    "functions": [
+      {
+        "filter": { "regexp": { "jgql:nodePath": "/sites/travels/home/news.*" } },
+        "weight": 10
+      },
+      {
+        "filter": { "regexp": { "jgql:nodePath": "/sites/travels/home/countries.*" } },
+        "weight": 5
+      }
+    ],
+    "score_mode": "first",
+    "boost_mode": "multiply",
+    "min_score": 50
+  },
+  "sportInterestBoost": {
+    "boost": "1",
+    "functions": [
+      {
+        "filter": { "match": { "wem:interests": "sport" } },
+        "weight": 10
+      }
+    ],
+    "score_mode": "first",
+    "boost_mode": "multiply",
+    "min_score": 1
+  }
+}
