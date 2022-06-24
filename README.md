@@ -15,11 +15,11 @@ _The examples in this repository mostly use multiplication factors to increase t
  ## Table of content
  
  - [Presentation](#presentation)
- - [Boost contents of a given type](#Boost contents of a given type)
- - [Boost a specific content](#Boost a specific content)
- - [Apply boosts based on the sections of a website](#Apply boosts based on the sections of a website)
- - [Take the publication date into account](#Take the publication date into account)
- - [Personalized search](#Personalized search)
+ - [Boost contents of a given type](#Boost-contents-of-a-given-type)
+ - [Boost a specific content](#Boost-a-specific-content)
+ - [Apply boosts based on the sections of a website](#Apply-boosts-based-on-the-sections-of-a-website)
+ - [Take the publication date into account](#Take-the-publication-date-into-account)
+ - [Personalized search](#Personalized-search)
  
  
  
